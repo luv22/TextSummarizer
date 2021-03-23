@@ -1,0 +1,38 @@
+<style>
+body {
+  background-image: url('bg.png');
+  background-repeat: no-repeat;
+  background-size: cover
+}
+p,h4,a{
+	color:white;
+}
+</style>
+<center>
+<a href="https://github.com/luv22/">GitHub:luv Gupta</a>
+<form action = "/templates" id="sumform" method = "POST">
+				<p>Enter the text you wish to summarize:</p>
+				<textarea maxlength = "4000" name = "input_text" id = "input_text" style="width:600px; 
+				height:250px" value = "{{request.form['input_text']}}" ></textarea>
+				<p>Enter the number of sentences you like to be outputted in summary: </p>
+				<p>
+					<input type="number" name = "num_sentences" pattern = 
+					"[0-9]+" min = "1" max = "100" required >
+				</p>
+				<p>
+					<input type="submit"  class="btn btn-success btn-md" value="Submit">
+				</p>
+				<!-- <h2> my summary</h2> -->
+				<h4>Summarized Text: </h4>
+				<textbox name="output_text" id="output_text" maxlength="50000" style="width:600px; 
+				height:250px">
+					{% for sentence in output_summary %}
+					<p>{{ output_summary }} </p>
+					<!-- {% endfor %} -->
+				</textbox>
+				<br>
+				<h4>Original Text:</h4>
+				<p>{{ original_text }}</p>
+			</form>
+			
+			</center>
