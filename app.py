@@ -89,12 +89,11 @@ app = Flask(__name__)
 @app.route('/templates', methods =['POST'])
 def original_text_form():
 		text = request.form['input_text']
-		number_of_sent = request.form['num_sentences']
 # 		print("TEXT:\n",text)
-		summary = generate_summary(text,int(number_of_sent))
+		summary = generate_summary(text,3)
 # 		print("*"*30)
 # 		print(summary)
-		return render_template('index1.html', title = "Summarizer", original_text = text, output_summary = summary, num_sentences = 5)
+		return render_template('index1.html', title = "Summarizer", original_text = text, output_summary = summary, num_sentences = 3)
 
 @app.route('/')
 def homepage():
