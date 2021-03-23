@@ -14,11 +14,7 @@ p,h4,a{
 				<p>Enter the text you wish to summarize:</p>
 				<textarea maxlength = "4000" name = "input_text" id = "input_text" style="width:600px; 
 				height:250px" value = "{{request.form['input_text']}}" ></textarea>
-				<p>Enter the number of sentences you like to be outputted in summary: </p>
-				<p>
-					<input type="number" name = "num_sentences" pattern = 
-					"[0-9]+" min = "1" max = "100" required >
-				</p>
+				
 				<p>
 					<input type="submit"  class="btn btn-success btn-md" value="Submit">
 				</p>
